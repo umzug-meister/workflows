@@ -1,10 +1,14 @@
-name: OpenAI Code Review
+name: Code Review Workflow
 
 on:
   workflow_call:
+    secrets:
+      OPENAI_API_KEY:
+        required: true
 
 jobs:
   code_review:
+    name: OpenAI Review
     if: github.event.pull_request.user.name != 'renovate'
     runs-on: ubuntu-latest
     permissions:
