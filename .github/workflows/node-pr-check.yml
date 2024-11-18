@@ -9,6 +9,7 @@ on:
 
 jobs:
   check:
+    name: Run PR Checks
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
