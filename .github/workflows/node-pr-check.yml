@@ -20,6 +20,11 @@ jobs:
         with:
           node-version: ${{ inputs.node_version }}
 
+      - name: Generate NPMRC
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{secrets.GITHUB_TOKEN}}" > .npmrc
+          echo "@xxxxx=https://npm.pkg.github.com/" >> .npmrc
+
       - name: Install
         run: npm ci
         env:
