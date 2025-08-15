@@ -34,7 +34,7 @@ jobs:
           echo "@xxxxx=https://npm.pkg.github.com/" >> .npmrc
 
       - name: Install
-        run: npm ci
+        run: npm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
